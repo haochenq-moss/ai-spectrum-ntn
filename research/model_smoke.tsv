@@ -1,0 +1,2 @@
+timestamp	trial	learning_rate	test_mse	test_spectral_efficiency	inference_latency_ms	status	description
+2026-09-02T08:42:27.025924+00:00	0	0.0001	0.00002547	244.676849	0.151171	keep	Lower learning rate may improve held-out imitation accuracy.

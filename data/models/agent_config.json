@@ -1,0 +1,5 @@
+{
+  "agent_type": "hybrid",
+  "memory_size": 1000,
+  "offline_fallback": true
+}

@@ -1,0 +1,8 @@
+🔬 Launching AutoResearch loop (duration=600s on GPU 0)...
+   This will autonomously:
+   - Evaluate documented allocation hypotheses
+   - Compare spectral efficiency, fairness, and latency
+   - Record keep/discard results and learnings
+   - Reserve GPU training for the Slurm submission script
+
+✅ AutoResearch complete: 4 trials across 3 scenarios.

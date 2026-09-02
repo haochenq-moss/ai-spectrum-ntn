@@ -1,0 +1,23 @@
+{
+  "num_states": 10,
+  "state_dimension": 256,
+  "output_dir": "data/processed-pipeline",
+  "splits": {
+    "train": [
+      0,
+      1,
+      2,
+      3,
+      4,
+      5,
+      6
+    ],
+    "validation": [
+      7
+    ],
+    "test": [
+      8,
+      9
+    ]
+  }
+}

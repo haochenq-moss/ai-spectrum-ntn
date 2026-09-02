@@ -1,0 +1,156 @@
+{
+  "total_scenarios": 10,
+  "generation_time_seconds": 31.453526496887207,
+  "scenarios_per_hour": 1144.5457476306428,
+  "total_files_generated": 50,
+  "file_types": {
+    "scenario_json": 10,
+    "csi_h5": 10,
+    "traffic_csv": 10,
+    "interference_npy": 10,
+    "jamming_npy": 10
+  },
+  "output_base_dir": "data/raw",
+  "manifests": [
+    {
+      "scenario_id": 0,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00000.json",
+        "csi_h5": "data/raw/csi/scenario_00000_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00000_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00000_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00000_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00000_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00000_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 1,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00001.json",
+        "csi_h5": "data/raw/csi/scenario_00001_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00001_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00001_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00001_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00001_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00001_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 2,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00002.json",
+        "csi_h5": "data/raw/csi/scenario_00002_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00002_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00002_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00002_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00002_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00002_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 3,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00003.json",
+        "csi_h5": "data/raw/csi/scenario_00003_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00003_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00003_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00003_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00003_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00003_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 4,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00004.json",
+        "csi_h5": "data/raw/csi/scenario_00004_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00004_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00004_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00004_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00004_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00004_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 5,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00005.json",
+        "csi_h5": "data/raw/csi/scenario_00005_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00005_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00005_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00005_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00005_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00005_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 6,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00006.json",
+        "csi_h5": "data/raw/csi/scenario_00006_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00006_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00006_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00006_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00006_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00006_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 7,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00007.json",
+        "csi_h5": "data/raw/csi/scenario_00007_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00007_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00007_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00007_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00007_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00007_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 8,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00008.json",
+        "csi_h5": "data/raw/csi/scenario_00008_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00008_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00008_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00008_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00008_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00008_JAMMER-2_jamming.npy"
+        ]
+      }
+    },
+    {
+      "scenario_id": 9,
+      "files": {
+        "scenario_json": "data/raw/scenarios/scenario_00009.json",
+        "csi_h5": "data/raw/csi/scenario_00009_csi.h5",
+        "traffic_csv": "data/raw/traffic/scenario_00009_traffic.csv",
+        "interference_npy": "data/raw/interference/scenario_00009_interference.npy",
+        "jamming_npy": [
+          "data/raw/jamming/scenario_00009_JAMMER-0_jamming.npy",
+          "data/raw/jamming/scenario_00009_JAMMER-1_jamming.npy",
+          "data/raw/jamming/scenario_00009_JAMMER-2_jamming.npy"
+        ]
+      }
+    }
+  ]
+}

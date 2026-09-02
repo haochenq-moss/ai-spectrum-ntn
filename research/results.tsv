@@ -1,0 +1,7 @@
+timestamp	trial	baseline	spectral_efficiency	latency_ms	fairness_jain	status	description
+2026-09-02T08:21:30.165808+00:00	0	classical_wf	354.340775	0.121585	0.414004	keep	Classical water-filling is strong for nominal channels.
+2026-09-02T08:22:00.983569+00:00	0	classical_wf	354.340775	0.121064	0.414004	discard	Classical water-filling is strong for nominal channels.
+2026-09-02T08:26:47.202498+00:00	0	classical_wf	369.226308	12.726561	0.387793	discard	Classical water-filling is strong for nominal channels.
+2026-09-02T08:26:47.218534+00:00	1	adversarial_wf	241.844513	1.928055	0.321191	discard	Adversarial water-filling improves resilience under jamming.
+2026-09-02T08:26:47.230489+00:00	2	diffract	316.997752	0.713089	0.448513	discard	DIFFRACT provides competitive capacity with lower solver effort.
+2026-09-02T08:26:47.253847+00:00	3	proposed	282.619110	4.821906	0.347628	discard	Hybrid agent strategy selection improves robust allocation.

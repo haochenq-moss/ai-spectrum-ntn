@@ -1,0 +1,3 @@
+timestamp	trial	baseline	spectral_efficiency	latency_ms	fairness_jain	status	description
+2026-09-02T08:24:42.014141+00:00	0	classical_wf	369.226308	0.194432	0.387793	keep	Classical water-filling is strong for nominal channels.
+2026-09-02T08:24:42.029569+00:00	1	adversarial_wf	241.844513	1.826497	0.321191	discard	Adversarial water-filling improves resilience under jamming.

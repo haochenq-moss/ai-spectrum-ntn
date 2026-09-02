@@ -1,0 +1,4 @@
+- Trial 0: lr=0.0001 keep; test MSE=0.00002547, test efficiency=245.235, inference=0.193 ms. Lower learning rate may improve held-out imitation accuracy.
+- Trial 1: lr=0.0003 keep; test MSE=0.00002413, test efficiency=250.403, inference=0.165 ms. Moderate learning rate may improve held-out imitation accuracy.
+- Trial 2: lr=0.001 discard; test MSE=0.00002177, test efficiency=239.906, inference=0.144 ms. Baseline learning rate for supervised allocation.
+- Trial 3: lr=0.003 discard; test MSE=0.00002187, test efficiency=229.498, inference=0.141 ms. Higher learning rate may converge faster within the trial budget.

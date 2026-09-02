@@ -1,0 +1,2 @@
+- Trial 0: classical_wf keep; efficiency=369.226, latency=0.194 ms. Classical water-filling is strong for nominal channels.
+- Trial 1: adversarial_wf discard; efficiency=241.845, latency=1.826 ms. Adversarial water-filling improves resilience under jamming.

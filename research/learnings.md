@@ -1,0 +1,6 @@
+- Trial 0: classical_wf keep; efficiency=354.341, latency=0.122 ms. Classical water-filling is strong for nominal channels.
+- Trial 0: classical_wf discard; efficiency=354.341, latency=0.121 ms. Classical water-filling is strong for nominal channels.
+- Trial 0: classical_wf discard; efficiency=369.226, latency=12.727 ms. Classical water-filling is strong for nominal channels.
+- Trial 1: adversarial_wf discard; efficiency=241.845, latency=1.928 ms. Adversarial water-filling improves resilience under jamming.
+- Trial 2: diffract discard; efficiency=316.998, latency=0.713 ms. DIFFRACT provides competitive capacity with lower solver effort.
+- Trial 3: proposed discard; efficiency=282.619, latency=4.822 ms. Hybrid agent strategy selection improves robust allocation.

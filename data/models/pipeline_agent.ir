@@ -1,0 +1,126 @@
+ir_version: '0.1'
+kind: workflow_ir
+source:
+  frontend: nemo_dsl
+  file: src/workflows/agent_workflow.nemo
+workflow:
+  id: SpectrumManagementAgent
+  entry: Observe
+  exits:
+  - Command
+  transition_semantics:
+    selection: first_match_by_priority
+    no_match: error_unless_exit
+inputs:
+- id: network_state
+  type: string
+capabilities: []
+policies: []
+nodes:
+- id: Observe
+  annotations:
+  - entry
+  prompt: Validate and summarize the current NTN network state.
+  reads:
+  - ref:
+      kind: input
+      name: network_state
+    optional: false
+    origin: implicit_entry_input
+  writes:
+  - name: state_summary
+    type: string
+    optional: false
+  requires: []
+  transitions:
+  - to: Analyze
+    priority: 0
+    reason: fallthrough
+    guard:
+      kind: always
+- id: Analyze
+  annotations: []
+  prompt: Assess channel quality, traffic demand, interference, and jamming in parallel where possible.
+  reads:
+  - ref:
+      kind: node_output
+      node: Observe
+      field: state_summary
+    optional: false
+    origin: dsl_stage_input
+  writes:
+  - name: strategy
+    type: string
+    optional: false
+  - name: channel_analysis
+    type: string
+    optional: false
+  - name: traffic_analysis
+    type: string
+    optional: false
+  - name: jammer_analysis
+    type: string
+    optional: false
+  requires: []
+  transitions:
+  - to: Allocate
+    priority: 0
+    reason: fallthrough
+    guard:
+      kind: always
+- id: Allocate
+  annotations: []
+  prompt: Select the robust spectrum and power allocation for the recommended strategy.
+  reads:
+  - ref:
+      kind: node_output
+      node: Analyze
+      field: strategy
+    optional: false
+    origin: dsl_stage_input
+  - ref:
+      kind: node_output
+      node: Analyze
+      field: channel_analysis
+    optional: false
+    origin: dsl_stage_input
+  - ref:
+      kind: node_output
+      node: Analyze
+      field: traffic_analysis
+    optional: false
+    origin: dsl_stage_input
+  - ref:
+      kind: node_output
+      node: Analyze
+      field: jammer_analysis
+    optional: false
+    origin: dsl_stage_input
+  writes:
+  - name: allocation
+    type: string
+    optional: false
+  requires: []
+  transitions:
+  - to: Command
+    priority: 0
+    reason: fallthrough
+    guard:
+      kind: always
+- id: Command
+  annotations:
+  - exit
+  prompt: Create the final network reconfiguration command from the allocation.
+  reads:
+  - ref:
+      kind: node_output
+      node: Allocate
+      field: allocation
+    optional: false
+    origin: dsl_stage_input
+  writes:
+  - name: command
+    type: string
+    optional: false
+  requires: []
+  transitions: []

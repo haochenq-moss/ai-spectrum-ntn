@@ -1,0 +1,39 @@
+workflow SpectrumManagementAgent {
+  input {
+    network_state: string
+  }
+
+  stage @entry Observe {
+    prompt: "Validate and summarize the current NTN network state."
+    output: {
+      state_summary: string
+    }
+  }
+
+  stage Analyze {
+    prompt: "Assess channel quality, traffic demand, interference, and jamming in parallel where possible."
+    input: Observe.state_summary
+    output: {
+      strategy: string
+      channel_analysis: string
+      traffic_analysis: string
+      jammer_analysis: string
+    }
+  }
+
+  stage Allocate {
+    prompt: "Select the robust spectrum and power allocation for the recommended strategy."
+    input: Analyze.strategy, Analyze.channel_analysis, Analyze.traffic_analysis, Analyze.jammer_analysis
+    output: {
+      allocation: string
+    }
+  }
+
+  stage @exit Command {
+    prompt: "Create the final network reconfiguration command from the allocation."
+    input: Allocate.allocation
+    output: {
+      command: string
+    }
+  }
+}

@@ -1,0 +1,173 @@
+# Configuration for AI Spectrum Management Pipeline
+# This file is loaded by default unless overridden
+
+dataset:
+  num_scenarios: 1000
+  scenario_types:
+    - "leo_satellite_coverage"
+    - "dense_terrestrial_6g"
+    - "multi_operator_sharing"
+  jammer_types:
+    - "constant_power"
+    - "frequency_sweep"
+    - "intelligent_adaptive"
+  channel_model: "3gpp_ntn"
+  time_duration_seconds: 1000
+  output_format: "hdf5"
+
+features:
+  channel_encoding_dim: 128
+  topology_encoding_dim: 64
+  traffic_features: 32
+  interference_features: 8
+  jammer_features: 16
+  total_state_dim: 256
+  normalization: "z_score"
+
+optimization:
+  method: "adversarial_wf"  # classical_wf, adversarial_wf, diffract
+  solver: "cvxpy"
+  max_iterations: 100
+  convergence_tolerance: 1e-4
+  power_budget_dbm: 30
+  jammer_budget_dbm: 30
+  fairness_metric: "proportional"  # "equal", "max-min", "proportional"
+
+training:
+  epochs: 100
+  batch_size: 32
+  learning_rate: 1e-3
+  optimizer: "adam"
+  loss_function: "mse"
+  validation_split: 0.15
+  early_stopping_patience: 10
+  device: "cuda:0"
+  mixed_precision: true
+
+rl:
+  algorithm: "ppo"  # ppo, a3c, ddpg
+  policy_network_dims: [256, 128, 64]
+  value_network_dims: [256, 128, 1]
+  entropy_coefficient: 0.01
+  learning_rate: 1e-4
+  gamma: 0.99
+  gae_lambda: 0.95
+  clip_ratio: 0.2
+  num_workers: 4
+
+agent:
+  type: "llm"  # llm, rl, hybrid
+  llm_provider: "openai"  # openai, anthropic, huggingface
+  llm_model: "gpt-4"
+  reasoning_strategy: "chain_of_thought"  # chain_of_thought, few_shot, tree_of_thought
+  memory_type: "rag"  # rag, semantic, hierarchical
+  memory_size: 1000
+  rag_embedding_model: "sentence-transformers/all-MiniLM-L6-v2"
+  rag_index_type: "faiss"  # faiss, milvus, pinecone
+  tool_timeout_seconds: 5
+  fallback_strategy: "conservative_allocation"
+
+models:
+  supervised:
+    architecture: "dense"  # dense, cnn, transformer, gnn
+    hidden_dims: [256, 128, 64]
+    activation: "relu"
+    dropout_rate: 0.1
+  
+  channel_predictor:
+    architecture: "lstm"  # lstm, transformer, gru
+    hidden_dim: 128
+    num_layers: 2
+    prediction_horizon: 10
+  
+  traffic_predictor:
+    architecture: "lstm"
+    hidden_dim: 64
+    num_layers: 1
+    forecast_horizon: 5
+  
+  jammer_detector:
+    architecture: "transformer"
+    embedding_dim: 64
+    num_heads: 4
+    num_layers: 2
+
+evaluation:
+  metrics:
+    - "spectral_efficiency"
+    - "latency_ms"
+    - "fairness_jain"
+    - "energy_efficiency"
+    - "jamming_robustness"
+    - "outage_probability"
+  num_scenarios: 100
+  output_dir: "experiments/results/"
+  plot_results: true
+  latex_export: true
+
+online:
+  control_interval_ms: 100
+  observation_buffer_size: 10
+  confidence_threshold: 0.8
+  enable_fallback: true
+  enable_monitoring: true
+  safety_checks: true
+  log_decisions: true
+
+nemoir:
+  optimization_level: "aggressive"  # none, conservative, aggressive
+  target_backend: "gpu"  # gpu, cpu, hybrid
+  parallelize_tools: true
+  enable_kernel_fusion: true
+  gpu_memory_limit_gb: 16
+  estimated_latency_ms: 10
+
+autoresearch:
+  duration_seconds: 28800  # 8 hours
+  gpu_id: 0
+  training_budget_seconds: 300  # 5 minutes per experiment
+  experiment_interval_seconds: 600  # try new idea every 10 min
+  max_experiments_per_session: 50
+  enable_hypothesis_generation: true
+  enable_hyperparameter_tuning: true
+  enable_dataset_expansion: true
+  enable_architecture_search: false  # Can be expensive
+
+paths:
+  data_raw: "data/raw/"
+  data_processed: "data/processed/"
+  data_ground_truth: "data/ground_truth/"
+  data_models: "data/models/"
+  data_indices: "data/indices/"
+  experiments: "experiments/"
+  research: "research/"
+  logs: "logs/"
+  notebooks: "notebooks/"
+  config: "config/"
+
+logging:
+  level: "INFO"  # DEBUG, INFO, WARNING, ERROR
+  format: "%(asctime)s - %(name)s - %(levelname)s - %(message)s"
+  file: "logs/pipeline.log"
+  file_level: "DEBUG"
+  console_level: "INFO"
+
+# Integration with three frameworks
+frameworks:
+  rag_practice:
+    enabled: true
+    embedding_service: "openai"  # openai, huggingface, local
+    vector_db: "faiss"
+    document_store: "chromadb"
+  
+  autoresearch:
+    enabled: true
+    agent_provider: "anthropic"  # anthropic, openai
+    experiment_runner: "local"  # local, ray, kubernetes
+    results_tracking: "file"  # file, wandb, mlflow
+  
+  nemoir:
+    enabled: true
+    compiler_version: "latest"
+    enable_visualization: true
+    enable_backend_export: true

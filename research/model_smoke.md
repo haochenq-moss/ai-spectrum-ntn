@@ -1,0 +1,1 @@
+- Trial 0: lr=0.0001 keep; test MSE=0.00002547, test efficiency=244.677, inference=0.151 ms. Lower learning rate may improve held-out imitation accuracy.
